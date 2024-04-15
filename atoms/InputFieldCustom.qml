@@ -1,86 +1,15 @@
 import QtQuick 2.15
-import QtQuick.Controls 2.15
-import QtQuick.Layouts 1.15
-import Qt5Compat.GraphicalEffects
-import "../styles/icones"
 
-Rectangle {
+InputFieldCustomForm {
     id: root
-    width: 200
-    height: 40
-    radius: 10
-    border.color: "lightgray"
-    border.width: 2
 
     signal pesquisaChanged(string pesquisa)
 
-    RowLayout {
-        anchors.fill: parent
+    input.onTextChanged: delayTimer.restart()
 
-        TextField {
-            id: input
-            Layout.fillWidth: true
-            Layout.fillHeight: true
+    delayTimer.onTriggered: root.pesquisaChanged(input.text)
 
-            Layout.leftMargin: 5
-            verticalAlignment: Text.AlignVCenter
-
-            placeholderText: "Em alta"
-            font.pixelSize: root.height * 0.5
-            cursorVisible: true
-            selectionColor: "lightblue"
-            selectedTextColor: "black"
-            color: "black"
-            focus: true
-            selectByMouse: true
-
-            onTextChanged: delayTimer.restart()
-
-            background: null
-
-        }
-
-        Timer {
-            id: delayTimer
-            interval: 500
-            repeat: false
-            running: false
-            onTriggered: root.pesquisaChanged(input.text)
-        }
-
-        MouseArea {
-            id: clearButton
-            width: root.width / 6
-            height: root.height
-            visible: input.text.length > 0
-            onClicked: {
-                input.text = ""
-            }
-
-
-            Image {
-                id:clearImage
-                source: "../styles/icones/apagar.png"
-                anchors.right: clearButton.right
-                anchors.rightMargin: 25
-                anchors.verticalCenter: clearButton.verticalCenter
-                width: clearButton.width / 1.4
-                height: clearButton.height / 1.4
-                fillMode: Image.PreserveAspectFit
-                visible: false
-
-            }
-
-            ColorOverlay{
-                id:colorOverlay
-                anchors.fill: clearImage
-                enabled: true
-                source: clearImage
-                color: "lightgray"
-                smooth: true
-            }
-        }
-    }
+    clearButton.onClicked: input.text = ""
 
     function getText() {
         return input.text
