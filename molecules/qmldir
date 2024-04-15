@@ -1,0 +1,4 @@
+module molecules
+TopBar 1.0 TopBar.qml
+Card 1.0 Card.qml
+InfoComponent 1.0 InfoComponent.qml

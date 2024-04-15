@@ -1,0 +1,4 @@
+module screens
+mainwindow 1.0 mainwindow.qml
+MainWindowItem 1.0 MainWindowItem.qml
+SerieInfoItem 1.0 SerieInfoItem.qml
