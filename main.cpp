@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 #endif
-    qputenv("QT_IM_MODULE", QByteArray("qtvirtualkeyboard"));
+    qputenv("QT_IM_MODULE", QByteArray("qtvirtualkeyboard")); //Ensinamento (e aviso): Esse comando deve estar sempre antes declaração do QGuiApplication app, para o VirtualKeyboard funcionar.
 
     QGuiApplication app(argc, argv);
 
