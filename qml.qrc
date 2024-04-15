@@ -15,5 +15,9 @@
         <file>styles/icones/apagar.png</file>
         <file>styles/icones/star.png</file>
         <file>molecules/InfoComponent.qml</file>
+        <file>molecules/CardForm.ui.qml</file>
+        <file>molecules/InfoComponentForm.ui.qml</file>
+        <file>atoms/InputFieldCustomForm.ui.qml</file>
+        <file>atoms/BackgroundCustom.qml</file>
     </qresource>
 </RCC>
