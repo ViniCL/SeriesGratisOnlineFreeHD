@@ -1,0 +1,19 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>atoms/qmldir</file>
+        <file>molecules/qmldir</file>
+        <file>atoms/ButtonCustomForm.ui.qml</file>
+        <file>atoms/ButtonCustom.qml</file>
+        <file>molecules/TopBar.qml</file>
+        <file>molecules/TopBarForm.ui.qml</file>
+        <file>screens/qmldir</file>
+        <file>screens/MainWindowItem.qml</file>
+        <file>screens/SerieInfoItem.qml</file>
+        <file>molecules/Card.qml</file>
+        <file>atoms/InputFieldCustom.qml</file>
+        <file>styles/icones/apagar.png</file>
+        <file>styles/icones/star.png</file>
+        <file>molecules/InfoComponent.qml</file>
+    </qresource>
+</RCC>
