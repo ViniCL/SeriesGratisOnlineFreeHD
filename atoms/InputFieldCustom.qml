@@ -18,4 +18,6 @@ InputFieldCustomForm {
     function clearText() {
         input.text = ""
     }
+
+    input.cursorVisible: input.focus
 }
