@@ -6,9 +6,9 @@ import molecules 1.0
 import screens 1.0
 import MainWindowControl 1.0
 import SeriesAbstractModel 1.0
-//import QtQuick.VirtualKeyboard 2.15
-//import QtQuick.VirtualKeyboard.Styles 2.15
-//import QtQuick.VirtualKeyboard.Settings 2.15
+import QtQuick.VirtualKeyboard 2.15
+import QtQuick.VirtualKeyboard.Styles 2.15
+import QtQuick.VirtualKeyboard.Settings 2.15
 
 ApplicationWindow {
     id: root
@@ -53,15 +53,16 @@ ApplicationWindow {
 
     }
 
-    /*InputPanel {
+    InputPanel {
         id: inputPanel
         width: parent.width
         x: 0
         y: root.height - inputPanel.height
         z: 10000
         visible: true
+        height: root.height / 2
 
-    }*/
+    }
 
 
 }

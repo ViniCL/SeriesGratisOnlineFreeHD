@@ -53,19 +53,18 @@ BackgroundCustom {
     ColumnLayout {
         id:column
 
-        anchors.top: mainImage.bottom
-        anchors.topMargin: 20
-
         width: root.width * 0.8
 
+        anchors.top: mainImage.bottom
+        anchors.topMargin: 20
         anchors.horizontalCenter: root.horizontalCenter
 
-        spacing: 10
-
+        spacing: 14
 
         Text {
+            id:descricao
             text: vDescription
-            maximumLineCount: 15
+            maximumLineCount: 18
             font.pixelSize: 18
             elide: Text.ElideRight
             wrapMode: Text.WordWrap
@@ -74,35 +73,68 @@ BackgroundCustom {
 
         }
 
-        Text {
-            text: "Gêneros: " + vGenres.join(", ")
-            maximumLineCount: 10
-            font.pixelSize: 15
-            elide: Text.ElideRight
-            wrapMode: Text.WordWrap
-            horizontalAlignment: Text.AlignLeft
-            Layout.maximumWidth: column.width
-        }
-
         Row {
-            spacing: 5
-            Image {
-                source:  "../styles/icones/star.png"
-                width: 60
-                height: 60
-                fillMode: Image.PreserveAspectFit
-            }
+            id: generosRow
+            spacing: 2
+
             Text {
-                text: vRating.toFixed(1)
+                id:generos
+                text: "Genres: "
+                font.bold: true
                 maximumLineCount: 10
-                font.pixelSize: 20
+                font.pixelSize: 18
                 elide: Text.ElideRight
                 wrapMode: Text.WordWrap
                 horizontalAlignment: Text.AlignLeft
                 Layout.maximumWidth: column.width
             }
+
+            Text {
+                id:generosList
+                text: vGenres.join(", ")
+                maximumLineCount: 10
+                font.pixelSize: 18
+                elide: Text.ElideRight
+                wrapMode: Text.WordWrap
+                horizontalAlignment: Text.AlignLeft
+                Layout.maximumWidth: column.width
+            }
+
+
         }
     }
+
+    Row {
+        id: starRow
+
+        spacing: 7
+
+        anchors.bottom: root.bottom
+        anchors.bottomMargin: 40
+        anchors.horizontalCenter: root.horizontalCenter
+
+
+        Image {
+            id: star
+            source:  "../styles/icones/star.png"
+            width: 70
+            height: 70
+            fillMode: Image.PreserveAspectFit
+        }
+
+        Text {
+            id: nota
+            text: vRating.toFixed(1)
+            font.bold: true
+            maximumLineCount: 1
+            font.pixelSize: 50
+            elide: Text.ElideRight
+            wrapMode: Text.WordWrap
+            horizontalAlignment: Text.AlignLeft
+            Layout.maximumWidth: column.width
+        }
+    }
+
 
     /*Image {
         source: vSecondaryImageUrl
