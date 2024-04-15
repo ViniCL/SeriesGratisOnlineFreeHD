@@ -11,7 +11,7 @@ class SystemSingleton : public QObject
 public:
     static SystemSingleton* getInstance();
 
-    enum seriesEmAltaIdEnum {
+    enum seriesEmAltaIdEnum : int {
         TheOffice = 526,
         BreakingBad = 169,
         TheBigBangTheory = 66,

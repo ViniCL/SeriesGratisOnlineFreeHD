@@ -74,7 +74,7 @@ Item {
                 height: tempList.cellHeight
                 color: background.color
 
-                    Card {
+                Card {
 
                     width: tempList.cellWidth - 10
                     height: tempList.cellHeight - 10
