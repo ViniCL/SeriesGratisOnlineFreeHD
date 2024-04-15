@@ -2,3 +2,4 @@ module atoms
 SearchLabel 1.0 SearchLabel.qml
 ButtonCustom 1.0 ButtonCustom.qml
 InputFieldCustom 1.0 InputFieldCustom.qml
+BackgroundCustom 1.0 BackgroundCustom.qml

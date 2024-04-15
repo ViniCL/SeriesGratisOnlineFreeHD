@@ -1,5 +1,7 @@
 import QtQuick 2.15
 
-Item {
+BackgroundCustomForm {
+    id: root
 
+    property bool vHasCornersWithCircles: false
 }

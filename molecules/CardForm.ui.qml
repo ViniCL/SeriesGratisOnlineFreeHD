@@ -2,9 +2,11 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 2.15
 
+import atoms 1.0
+
 import "../styles/icones"
 
-Rectangle {
+BackgroundCustom {
     id: root
     width: 300
     height: 200
