@@ -11,6 +11,7 @@ Item {
 
     Component.onCompleted: {
         vSeriesAbstractModel.series = mainControl.doSearchAllSeries("");
+        topBar.search.focus = false
     }
 
     property SeriesAbstractModel vSeriesAbstractModel : SeriesAbstractModel{

@@ -9,12 +9,11 @@ int main(int argc, char *argv[])
 #if QT_VERSION < QT_VERSION_CHECK(6, 0, 0)
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 #endif
+    qputenv("QT_IM_MODULE", QByteArray("qtvirtualkeyboard"));
+
     QGuiApplication app(argc, argv);
 
     QQmlApplicationEngine engine;
-
-    qputenv("QT_IM_MODULE", QByteArray("qtvirtualkeyboard"));
-   // qputenv( "QT_VIRTUALKEYBOARD_STYLE", QByteArray( "default" ) );
 
     SystemSingleton::getInstance();
 
