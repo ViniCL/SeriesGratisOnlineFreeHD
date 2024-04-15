@@ -2,9 +2,11 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15
 import QtQuick.Layouts 2.15
 
+import atoms 1.0
+
 import "../styles/icones"
 
-Rectangle {
+BackgroundCustom {
     id: root
 
     width: 400
@@ -14,69 +16,7 @@ Rectangle {
     radius: 10
     smooth: true
 
-    Rectangle{
-        id:cornerTopLeft
-
-        radius:10
-
-        height: 20
-        width: 20
-
-        color: root.border.color
-
-        anchors{
-            left: root.left
-            top: root.top
-        }
-    }
-
-    Rectangle{
-        id:cornerTopRight
-
-        radius:10
-
-        height: 20
-        width: 20
-
-        color: root.border.color
-
-        anchors{
-            right: root.right
-            top: root.top
-        }
-    }
-
-    Rectangle{
-        id:cornerBottomLeft
-
-        radius:10
-
-        height: 20
-        width: 20
-
-        color: root.border.color
-
-        anchors{
-            left: root.left
-            bottom: root.bottom
-        }
-    }
-
-    Rectangle{
-        id:cornerBottomRight
-
-        radius:10
-
-        height: 20
-        width: 20
-
-        color: root.border.color
-
-        anchors{
-            right: root.right
-            bottom: root.bottom
-        }
-    }
+    vHasCornersWithCircles: true
 
     Text {
         id: title

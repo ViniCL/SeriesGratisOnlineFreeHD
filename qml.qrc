@@ -19,5 +19,6 @@
         <file>molecules/InfoComponentForm.ui.qml</file>
         <file>atoms/InputFieldCustomForm.ui.qml</file>
         <file>atoms/BackgroundCustom.qml</file>
+        <file>atoms/BackgroundCustomForm.ui.qml</file>
     </qresource>
 </RCC>
