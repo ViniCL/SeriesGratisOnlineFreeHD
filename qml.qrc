@@ -20,5 +20,11 @@
         <file>atoms/InputFieldCustomForm.ui.qml</file>
         <file>atoms/BackgroundCustom.qml</file>
         <file>atoms/BackgroundCustomForm.ui.qml</file>
+        <file>styles/customVirtualKeyboard/pt_BR/dialpad.fallback</file>
+        <file>styles/customVirtualKeyboard/pt_BR/digits.fallback</file>
+        <file>styles/customVirtualKeyboard/pt_BR/handwriting.fallback</file>
+        <file>styles/customVirtualKeyboard/pt_BR/main.qml</file>
+        <file>styles/customVirtualKeyboard/pt_BR/numbers.fallback</file>
+        <file>styles/customVirtualKeyboard/pt_BR/symbols.fallback</file>
     </qresource>
 </RCC>

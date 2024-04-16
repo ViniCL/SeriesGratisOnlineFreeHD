@@ -9,8 +9,9 @@ Rectangle {
     width: 200
     height: 40
     radius: 10
-    border.color: "lightgray"
+    border.color: "#c0c0c0"
     border.width: 2
+    color: "#f0f0f0"
 
     property alias input: input
     property alias delayTimer: delayTimer
@@ -30,11 +31,13 @@ Rectangle {
             placeholderText: "Em alta"
             font.pixelSize: root.height * 0.5
             cursorVisible: true
-            selectionColor: "lightblue"
+            selectionColor: "#c0c0c0"
             selectedTextColor: "black"
             color: "black"
             focus: true
             selectByMouse: true
+
+            onPressed: focus = true
 
             background: null
 
@@ -42,7 +45,7 @@ Rectangle {
 
         Timer {
             id: delayTimer
-            interval: 500
+            interval: 600
             repeat: false
             running: false
         }
@@ -71,7 +74,7 @@ Rectangle {
                 anchors.fill: clearImage
                 enabled: true
                 source: clearImage
-                color: "lightgray"
+                color: "#c0c0c0"
                 smooth: true
             }
         }

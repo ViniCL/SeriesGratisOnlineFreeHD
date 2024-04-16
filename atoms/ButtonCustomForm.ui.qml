@@ -7,6 +7,4 @@ RoundButton {
     width: 50
     height: 50
 
-
-
 }

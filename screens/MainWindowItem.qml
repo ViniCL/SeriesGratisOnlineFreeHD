@@ -3,20 +3,24 @@ import QtQuick.Controls 2.15
 import atoms 1.0
 import molecules 1.0
 import SeriesAbstractModel 1.0
+import QtQuick.VirtualKeyboard 2.15
+import QtQuick.VirtualKeyboard.Styles 2.15
+import QtQuick.VirtualKeyboard.Settings 2.15
+
 
 Item {
     id:root
 
     signal cardClicked(int idSerie)
 
-    Component.onCompleted: {
-        vSeriesAbstractModel.series = mainControl.doSearchAllSeries("");
-        topBar.search.focus = false
-    }
-
+    property bool _showKeyboard: false
     property SeriesAbstractModel vSeriesAbstractModel : SeriesAbstractModel{
         id: seri
 
+    }
+
+    Component.onCompleted: {
+        vSeriesAbstractModel.series = mainControl.doSearchAllSeries("");
     }
 
     Rectangle{
@@ -24,17 +28,32 @@ Item {
 
         anchors.fill: root
 
-        color: "#cca300"
+        /*gradient: Gradient {
+            GradientStop { position: -0.2; color: "#cca300" }
+            GradientStop { position: 1.0; color: "#272727" }
+        }*/
+
+        gradient: Gradient {
+            GradientStop { position: -0.2; color: "#6c2519" }
+            GradientStop { position: 1.0; color: "#070000" }
+        }
+
+
 
     }
 
     TopBar{
         id: topBar
 
-        vColor: background.color
+        vColor: "transparent"
 
         onPesquisaChanged: function(pesquisa){
             vSeriesAbstractModel.series = mainControl.doSearchAllSeries(pesquisa);
+        }
+
+        onInputFocusChanged:function(focus){
+            _showKeyboard = focus;
+
         }
 
         anchors.top: background.top
@@ -46,7 +65,8 @@ Item {
 
     Rectangle{
        id:gridBkg
-       color: background.color
+       color: "transparent"
+
 
        anchors.horizontalCenter: background.horizontalCenter
        anchors.top: topBar.bottom
@@ -60,8 +80,13 @@ Item {
 
             anchors.centerIn: parent
             width: parent.width
-            height: parent.height // 2
+            height: parent.height
             clip: true
+
+            onMovingChanged: {
+                topBar.search.input.focus = false
+
+            }
 
             cellWidth: tempList.width / 2
             cellHeight: tempList.height / 2.2
@@ -73,7 +98,8 @@ Item {
 
                 width: tempList.cellWidth
                 height: tempList.cellHeight
-                color: background.color
+                color: "transparent"
+
 
                 Card {
 
@@ -94,6 +120,44 @@ Item {
             model: vSeriesAbstractModel
 
         }
+    }
+
+    on_ShowKeyboardChanged: _showKeyboard ? animacaoEntrada.start() : animacaoSaida.start()
+    property real _inputPanelStartPosition: root.height - inputPanel.height
+
+
+    InputPanel {
+        id: inputPanel
+        width: parent.width
+        x: 0
+        y: _inputPanelStartPosition
+        z: 10000
+        visible: false
+
+
+
+    }
+
+    NumberAnimation{
+        id: animacaoEntrada
+        target: inputPanel
+        property: "y"
+        from: root.height
+        to: _inputPanelStartPosition
+        duration: 200
+
+        onStarted: inputPanel.visible = true
+    }
+
+    NumberAnimation{
+        id: animacaoSaida
+        target: inputPanel
+        property: "y"
+        from: _inputPanelStartPosition
+        to: root.height
+        duration: 200
+
+        onStopped: inputPanel.visible = false
     }
 
 }
