@@ -7,33 +7,18 @@ QList<SerieStubResponse*> SeriesIntegration::searchAllSeries(const QString& sear
 
     QUrl APIUrl("https://api.tvmaze.com/search/shows?q=" + searchTerm);
 
-    QNetworkRequest request(APIUrl);
+    QJsonDocument jsonDocument = getConnection(APIUrl);
 
-    QNetworkReply* reply = _manager.get(request);
-
-    QEventLoop loop;
-    QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
-    loop.exec();
-
-    if (reply->error() == QNetworkReply::NoError) {
-        QByteArray response = reply->readAll();
-        QJsonDocument jsonDocument = QJsonDocument::fromJson(response);
-
-        if (!jsonDocument.isNull()) {
-            QJsonArray jsonArray = jsonDocument.array();
-            for (const QJsonValue &value : jsonArray) {
-                QJsonObject jsonObj = value.toObject();
-                QJsonObject showObject = jsonObj["show"].toObject();
-                SerieStubResponse *serieResponse = new SerieStubResponse();
-                serieResponse->parseJson(showObject);
-                seriesList.append(serieResponse);
-            }
+    if (!jsonDocument.isNull()) {
+        QJsonArray jsonArray = jsonDocument.array();
+        for (const QJsonValue &value : jsonArray) {
+            QJsonObject jsonObj = value.toObject();
+            QJsonObject showObject = jsonObj["show"].toObject();
+            SerieStubResponse *serieResponse = new SerieStubResponse();
+            serieResponse->parseJson(showObject);
+            seriesList.append(serieResponse);
         }
-    } else {
-        qDebug() << "Erro : " << reply->errorString();
     }
-
-    reply->deleteLater();
 
     return seriesList;
 }
@@ -41,10 +26,23 @@ QList<SerieStubResponse*> SeriesIntegration::searchAllSeries(const QString& sear
 SerieStubResponse* SeriesIntegration::searchOneSerieById(int id) {
     SerieStubResponse* serieResponse = nullptr;
 
-    QString urlString = QString("https://api.tvmaze.com/shows/%1").arg(id);
+    QUrl APIUrl(QString("https://api.tvmaze.com/shows/%1").arg(id));
 
-    QUrl APIUrl(urlString);
-    QNetworkRequest request(APIUrl);
+    QJsonDocument jsonDocument = getConnection(APIUrl);
+
+    if (!jsonDocument.isNull()) {
+        QJsonObject showObject = jsonDocument.object();
+        serieResponse = new SerieStubResponse();
+        serieResponse->parseJson(showObject);
+    }
+
+    return serieResponse;
+}
+
+QJsonDocument SeriesIntegration::getConnection(QUrl url)
+{
+    QNetworkRequest request(url);
+    QJsonDocument jsonDocument;
 
     QNetworkReply* reply = _manager.get(request);
 
@@ -52,20 +50,15 @@ SerieStubResponse* SeriesIntegration::searchOneSerieById(int id) {
     QObject::connect(reply, &QNetworkReply::finished, &loop, &QEventLoop::quit);
     loop.exec();
 
-    if (reply->error() == QNetworkReply::NoError) {
-        QByteArray response = reply->readAll();
-        QJsonDocument jsonDocument = QJsonDocument::fromJson(response);
-
-        if (!jsonDocument.isNull()) {
-            QJsonObject showObject = jsonDocument.object();
-            serieResponse = new SerieStubResponse();
-            serieResponse->parseJson(showObject);
-        }
-    } else {
+    if (reply->error() != QNetworkReply::NoError) {
         qDebug() << "Erro : " << reply->errorString();
+        return jsonDocument;
     }
 
-    reply->deleteLater();
+    QByteArray response = reply->readAll();
+    jsonDocument = QJsonDocument::fromJson(response);
 
-    return serieResponse;
+    delete reply;
+
+    return jsonDocument;
 }
