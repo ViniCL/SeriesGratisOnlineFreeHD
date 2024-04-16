@@ -11,4 +11,14 @@ CardForm{
 
     mouseArea.onReleased: root.clicked()
 
+    onVImageUrlChanged: thumbnail.source = vImageUrl ? vImageUrl : "../styles/images/defaultCardImage.png"
+
+    thumbnail.onStatusChanged: {
+        if (thumbnail.status === Image.Loading) {
+            busyIndicator.visible = true;
+        } else {
+            busyIndicator.visible = false;
+        }
+    }
+
 }

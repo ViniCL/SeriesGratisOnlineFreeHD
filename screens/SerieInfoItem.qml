@@ -10,40 +10,33 @@ Item {
     signal returnToMain()
 
     property int vIdSerie
+    property real vRating
+    property string vMainImageURL
+    property string vTitle
+
     property serieInfoDTO _serieInfo
 
-
     onVIdSerieChanged: {
+        infoComponent.vTitle = vTitle
+        infoComponent.vMainImageUrl = vMainImageURL
+        infoComponent.vRating = vRating
         _serieInfo = mainControl.searchOneSerieById(vIdSerie)
     }
 
-
     on_SerieInfoChanged: {
-        infoComponent.vTitle = _serieInfo.name
-        infoComponent.vMainImageUrl = _serieInfo.image
         infoComponent.vDescription = _serieInfo.summary
-        infoComponent.vRating = _serieInfo.rating
-        infoComponent.vSecondaryImageUrl = _serieInfo.image
         infoComponent.vGenres = _serieInfo.genres
-
     }
 
     Rectangle{
         id:background
 
         anchors.fill: parent
-/*
-        gradient: Gradient {
-            GradientStop { position: -0.2; color: "#cca300" }
-            GradientStop { position: 1.0; color: "#272727" }
-        }
-*/
 
         gradient: Gradient {
             GradientStop { position: -0.2; color: "#6c2519" }
             GradientStop { position: 1.0; color: "#070000" }
         }
-
 
     }
 
