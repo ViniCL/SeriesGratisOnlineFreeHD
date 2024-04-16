@@ -10,6 +10,8 @@ int main(int argc, char *argv[])
     QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
 #endif
     qputenv("QT_IM_MODULE", QByteArray("qtvirtualkeyboard")); //Ensinamento (e aviso): Esse comando deve estar sempre antes declaração do QGuiApplication app, para o VirtualKeyboard funcionar.
+    qputenv("QT_VIRTUALKEYBOARD_LAYOUT_PATH", ":/styles/customVirtualKeyboard");
+    // qputenv("QT_VIRTUALKEYBOARD_STYLE", QByteArray("material"));
 
     QGuiApplication app(argc, argv);
 
@@ -22,6 +24,7 @@ int main(int argc, char *argv[])
     engine.addImportPath("qrc:/");
 
     const QUrl url(QStringLiteral("qrc:/main.qml"));
+
     QObject::connect(
         &engine,
         &QQmlApplicationEngine::objectCreated,

@@ -32,7 +32,18 @@ Item {
         id:background
 
         anchors.fill: parent
-        color: "#cca300"
+/*
+        gradient: Gradient {
+            GradientStop { position: -0.2; color: "#cca300" }
+            GradientStop { position: 1.0; color: "#272727" }
+        }
+*/
+
+        gradient: Gradient {
+            GradientStop { position: -0.2; color: "#6c2519" }
+            GradientStop { position: 1.0; color: "#070000" }
+        }
+
 
     }
 

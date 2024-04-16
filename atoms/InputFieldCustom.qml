@@ -4,6 +4,7 @@ InputFieldCustomForm {
     id: root
 
     signal pesquisaChanged(string pesquisa)
+    signal inputFocusChanged(bool focus)
 
     input.onTextChanged: delayTimer.restart()
 
@@ -20,4 +21,5 @@ InputFieldCustomForm {
     }
 
     input.cursorVisible: input.focus
+    input.onFocusChanged: root.inputFocusChanged(input.focus)
 }

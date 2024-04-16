@@ -48,3 +48,4 @@ HEADERS += \
     Services/seriesservice.h \
     registertype.h \
     systemsingleton.h
+

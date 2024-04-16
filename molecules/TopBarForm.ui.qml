@@ -8,12 +8,12 @@ Rectangle{
     property alias background : background
     property alias search : search
 
+    color: "transparent"
+
     Rectangle{
         id:background
 
         anchors.fill: root
-
-        color: "white"
 
     }
 

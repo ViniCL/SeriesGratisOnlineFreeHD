@@ -5,10 +5,10 @@ Rectangle {
 
     width: 300
     height: 200
-    border.color: "lightgray"
+    border.color: "#c0c0c0"
     border.width: 2
     radius: 10
-    color: "white"
+    color: "#f0f0f0"
     smooth: true
 
     Rectangle{

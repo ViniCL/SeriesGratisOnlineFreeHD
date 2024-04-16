@@ -10,10 +10,9 @@ BackgroundCustom {
     id: root
     width: 300
     height: 200
-    border.color: "lightgray"
     border.width: 2
     radius: 10
-    color: mouseArea.containsPress ? "lightgray" : "white"
+    color: mouseArea.containsPress ? "lightgray" : "#f0f0f0"
     smooth: true
 
     property alias mouseArea: mouseArea
