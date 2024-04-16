@@ -20,7 +20,7 @@ Rectangle{
     RowLayout {
         id: row
         anchors.fill: background
-        anchors.centerIn: parent
+        anchors.centerIn: background
         spacing: 10
 
         anchors{

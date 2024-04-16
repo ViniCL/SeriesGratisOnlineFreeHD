@@ -18,7 +18,7 @@ Rectangle {
     property alias clearButton: clearButton
 
     RowLayout {
-        anchors.fill: parent
+        anchors.fill: root
 
         TextField {
             id: input
@@ -33,7 +33,7 @@ Rectangle {
             cursorVisible: true
             selectionColor: "#c0c0c0"
             selectedTextColor: "black"
-            color: "black"
+            color: "#070000"
             focus: true
             selectByMouse: true
 

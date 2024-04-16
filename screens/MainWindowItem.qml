@@ -52,8 +52,8 @@ Item {
 
         anchors.top: background.top
         anchors.topMargin: 40
-        width: parent.width
-        height: parent.height / 8
+        width: background.width
+        height: background.height / 8
     }
 
 
@@ -65,16 +65,16 @@ Item {
        anchors.horizontalCenter: background.horizontalCenter
        anchors.top: topBar.bottom
 
-       width: parent.width - 40
-       height: parent.height / 1.2
+       width: background.width - 40
+       height: background.height / 1.2
 
 
         GridView{
             id:tempList
 
-            anchors.centerIn: parent
-            width: parent.width
-            height: parent.height
+            anchors.centerIn: gridBkg
+            width: gridBkg.width
+            height: gridBkg.height
             clip: true
 
             onMovingChanged: {
@@ -100,7 +100,7 @@ Item {
                     width: tempList.cellWidth - 10
                     height: tempList.cellHeight - 10
 
-                    anchors.centerIn: parent
+                    anchors.centerIn: delegateBackground
 
                     vImageUrl: imagem
                     vTitle: nome
@@ -121,7 +121,7 @@ Item {
 
     InputPanel {
         id: inputPanel
-        width: parent.width
+        width: background.width
         x: 0
         y: _inputPanelStartPosition
         z: 10000

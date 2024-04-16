@@ -31,7 +31,7 @@ Item {
     Rectangle{
         id:background
 
-        anchors.fill: parent
+        anchors.fill: root
 
         gradient: Gradient {
             GradientStop { position: -0.2; color: "#6c2519" }
