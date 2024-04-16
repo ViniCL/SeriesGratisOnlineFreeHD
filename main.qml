@@ -19,6 +19,8 @@ ApplicationWindow {
     minimumHeight: height
     minimumWidth: width
 
+    property int _idSerieInfoInicial: 1
+
     MainWindowControl{
         id: mainControl
 
@@ -46,6 +48,7 @@ ApplicationWindow {
         SerieInfoItem {
             id: serieInfoScreen
 
+            vIdSerie: _idSerieInfoInicial
             onReturnToMain: view.currentIndex = 0
 
         }
