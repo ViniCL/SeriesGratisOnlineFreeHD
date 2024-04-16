@@ -25,9 +25,9 @@ public:
 
 private:
     int _id;
+    double _rating;
     QString _dsName;
     QUrl _image;
-    double _rating;
 };
 
 #endif // SERIESDTO_H

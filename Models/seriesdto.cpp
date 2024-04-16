@@ -2,9 +2,9 @@
 
 SeriesDTO::SeriesDTO() :
     _id(0),
+    _rating(0.0),
     _dsName(""),
-    _image(QUrl()),
-    _rating(0.0) {}
+    _image(QUrl()){}
 
 void SeriesDTO::fillFromSerieStub(const SerieStubResponse& serieStub) {
     setId(serieStub.id());

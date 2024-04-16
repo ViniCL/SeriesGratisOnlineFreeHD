@@ -1,9 +1,9 @@
 #include "serieinfodto.h"
 
 SerieInfoDTO::SerieInfoDTO() :
-    _dsName(""),
-    _image(QUrl()),
     _rating(0.0),
+    _image(QUrl()),
+    _dsName(""),
     _summary(""),
     _genres(QStringList())
 {}
