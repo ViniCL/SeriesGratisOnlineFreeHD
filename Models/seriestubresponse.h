@@ -55,6 +55,8 @@ public:
 
 private:
     int _id;
+    int _runtime;
+    double _ratingAverage;
     QString _name;
     QString _type;
     QString _language;
@@ -63,8 +65,6 @@ private:
     QString _ended;
     QString _officialSite;
     QString _summary;
-    double _ratingAverage;
-    int _runtime;
     QUrl _imageUrl;
     QUrl _imagePortraitUrl;
     QList<QString> _genres;

@@ -38,9 +38,9 @@ public:
 
 
 private:
-    QString _dsName;
-    QUrl _image;
     double _rating;
+    QUrl _image;
+    QString _dsName;
     QString _summary;
     QStringList _genres;
 };

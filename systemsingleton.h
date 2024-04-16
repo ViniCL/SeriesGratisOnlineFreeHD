@@ -27,11 +27,12 @@ public:
     QList<SeriesDTO*> seriesEmAlta() const;
 
 private:
+    QList<SeriesDTO*> _seriesEmAlta;
+    static SystemSingleton* instance;
+
     explicit SystemSingleton(QObject *parent = nullptr);
     void setSeriesEmAlta(const QList<SeriesDTO*> &seriesEmAlta);
 
-    static SystemSingleton* instance;
-    QList<SeriesDTO*> _seriesEmAlta;
 };
 
 #endif // SYSTEMSINGLETON_H

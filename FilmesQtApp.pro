@@ -12,7 +12,6 @@ SOURCES += \
         Controls/mainwindowcontrol.cpp \
         Delegates/seriesdelegate.cpp \
         Integrations/seriesintegration.cpp \
-        Models/serieinfoabstractmodel.cpp \
         Models/serieinfodto.cpp \
         Models/seriesabstractmodel.cpp \
         Models/seriesdto.cpp \
@@ -40,7 +39,6 @@ HEADERS += \
     Controls/mainwindowcontrol.h \
     Delegates/seriesdelegate.h \
     Integrations/seriesintegration.h \
-    Models/serieinfoabstractmodel.h \
     Models/serieinfodto.h \
     Models/seriesabstractmodel.h \
     Models/seriesdto.h \
