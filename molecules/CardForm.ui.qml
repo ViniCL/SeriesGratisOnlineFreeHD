@@ -23,7 +23,7 @@ BackgroundCustom {
 
     MouseArea {
         id: mouseArea
-        anchors.fill: parent
+        anchors.fill: root
     }
 
     Image {
@@ -34,8 +34,8 @@ BackgroundCustom {
         anchors.topMargin: 16
 
         source: "../styles/images/defaultCardImage.png"
-        width: parent.width / 1.3
-        height: parent.height / 1.3
+        width: root.width / 1.3
+        height: root.height / 1.3
         fillMode: Image.PreserveAspectFit
         asynchronous: true
 
@@ -46,9 +46,9 @@ BackgroundCustom {
     BusyIndicator {
         id: busyIndicator
         visible: img.status === Image.Loading
-        anchors.centerIn: parent
-        width: parent.width / 3
-        height: parent.height / 3
+        anchors.centerIn: root
+        width: root.width / 3
+        height: root.height / 3
     }
 
 

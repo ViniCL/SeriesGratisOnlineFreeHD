@@ -7,8 +7,6 @@ ButtonCustomForm{
 
     onVIconChanged: {
         root.icon.source = vIcon;
-        root.icon.height = parent.height
-        root.icon.width = parent.width
     }
 
 }
