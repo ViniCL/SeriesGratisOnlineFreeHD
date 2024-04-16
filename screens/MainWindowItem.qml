@@ -11,9 +11,10 @@ import QtQuick.VirtualKeyboard.Settings 2.15
 Item {
     id:root
 
-    signal cardClicked(int idSerie)
+    signal cardClicked(int idSerie, string imagem, string nome, real nota)
 
     property bool _showKeyboard: false
+    property real _inputPanelStartPosition: root.height - inputPanel.height
     property SeriesAbstractModel vSeriesAbstractModel : SeriesAbstractModel{
         id: seri
 
@@ -28,17 +29,10 @@ Item {
 
         anchors.fill: root
 
-        /*gradient: Gradient {
-            GradientStop { position: -0.2; color: "#cca300" }
-            GradientStop { position: 1.0; color: "#272727" }
-        }*/
-
         gradient: Gradient {
             GradientStop { position: -0.2; color: "#6c2519" }
             GradientStop { position: 1.0; color: "#070000" }
         }
-
-
 
     }
 
@@ -113,7 +107,7 @@ Item {
                     vNota: nota
 
 
-                    onClicked: cardClicked(idSerie)
+                    onClicked: cardClicked(idSerie, imagem, nome, nota)
                 }
             }
 
@@ -123,7 +117,6 @@ Item {
     }
 
     on_ShowKeyboardChanged: _showKeyboard ? animacaoEntrada.start() : animacaoSaida.start()
-    property real _inputPanelStartPosition: root.height - inputPanel.height
 
 
     InputPanel {
@@ -133,8 +126,6 @@ Item {
         y: _inputPanelStartPosition
         z: 10000
         visible: false
-
-
 
     }
 
