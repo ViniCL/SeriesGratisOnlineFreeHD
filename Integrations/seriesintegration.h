@@ -18,6 +18,8 @@ public:
 private:
      QNetworkAccessManager _manager;
 
+     QJsonDocument getConnection(QUrl url);
+
 };
 
 #endif // SERIESINTEGRATION_H
