@@ -20,6 +20,8 @@ Kit: Desktop Qt 6.7.0 MinGW 64-bit
 
 Build System: QMake
 
+![image](https://github.com/ViniCL/SeriesGratisOnlineFreeHD/assets/52608377/cabc35c4-31cd-42b3-ba1c-149064c37fc1)
+
 
 
 
