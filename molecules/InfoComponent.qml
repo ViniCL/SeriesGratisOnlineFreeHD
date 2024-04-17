@@ -8,7 +8,7 @@ InfoComponentForm {
     property string vMainImageUrl: ""
     property string vSecondaryImageUrl: ""
     property real vRating: 0.0
-    property var vGenres: ["", ""]
+    property var vGenres: ["All"]
 
 
 }

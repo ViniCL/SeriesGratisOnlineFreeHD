@@ -28,5 +28,6 @@
         <file>styles/customVirtualKeyboard/pt_BR/symbols.fallback</file>
         <file>styles/images/defaultCardImage.png</file>
         <file>styles/images/logoSeriesGratisOnlineFreeHD2.png</file>
+        <file>styles/images/defaultCardImage2.png</file>
     </qresource>
 </RCC>
