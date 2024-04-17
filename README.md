@@ -5,6 +5,8 @@ Ele consome os dados da TVmaze API (https://www.tvmaze.com/api). Créditos totai
 
 ## Arquitetura:
 
+![image](https://github.com/ViniCL/SeriesGratisOnlineFreeHD/assets/52608377/eda5ae7b-28b7-41ee-96c6-94afee83d8c1)
+
 
 
 
@@ -41,6 +43,7 @@ https://www.qt.io/download-qt-installer-oss
 ![Test Image 1](ProjectInfo/ComponentesInstalacaoAmbiente.png)
 
 4 - Avance os passos até a instalação ser concluida.
+
 
 
 
