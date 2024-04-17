@@ -113,7 +113,6 @@ BackgroundCustom {
         anchors.bottomMargin: 40
         anchors.horizontalCenter: root.horizontalCenter
 
-
         Image {
             id: star
             source:  "../styles/icones/star.png"
@@ -134,14 +133,5 @@ BackgroundCustom {
             Layout.maximumWidth: column.width
         }
     }
-
-
-    /*Image {
-        source: vSecondaryImageUrl
-        width: 100
-        height: 100
-        fillMode: Image.PreserveAspectFit
-
-    }*/
 
 }

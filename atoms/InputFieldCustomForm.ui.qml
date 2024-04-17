@@ -32,7 +32,7 @@ Rectangle {
             font.pixelSize: root.height * 0.5
             cursorVisible: true
             selectionColor: "#c0c0c0"
-            selectedTextColor: "black"
+            selectedTextColor: "#070000"
             color: "#070000"
             focus: true
             selectByMouse: true

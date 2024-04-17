@@ -7,7 +7,6 @@ import QtQuick.VirtualKeyboard 2.15
 import QtQuick.VirtualKeyboard.Styles 2.15
 import QtQuick.VirtualKeyboard.Settings 2.15
 
-
 Item {
     id:root
 
@@ -19,6 +18,8 @@ Item {
         id: seri
 
     }
+
+    on_ShowKeyboardChanged: _showKeyboard ? animacaoEntrada.start() : animacaoSaida.start()
 
     Component.onCompleted: {
         vSeriesAbstractModel.series = mainControl.doSearchAllSeries("");
@@ -58,12 +59,11 @@ Item {
 
 
     Rectangle{
-       id:gridBkg
+       id:gridBackground
        color: "transparent"
 
-
        anchors.horizontalCenter: background.horizontalCenter
-       anchors.top: topBar.bottom
+       anchors.bottom: background.bottom
 
        width: background.width - 40
        height: background.height / 1.2
@@ -72,9 +72,9 @@ Item {
         GridView{
             id:tempList
 
-            anchors.centerIn: gridBkg
-            width: gridBkg.width
-            height: gridBkg.height
+            anchors.centerIn: gridBackground
+            width: gridBackground.width
+            height: gridBackground.height
             clip: true
 
             onMovingChanged: {
@@ -115,9 +115,6 @@ Item {
 
         }
     }
-
-    on_ShowKeyboardChanged: _showKeyboard ? animacaoEntrada.start() : animacaoSaida.start()
-
 
     InputPanel {
         id: inputPanel
