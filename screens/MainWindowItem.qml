@@ -78,6 +78,7 @@ Item {
 
         onPesquisaChanged: function(pesquisa){
             vSeriesAbstractModel.series = mainControl.doSearchAllSeries(pesquisa);
+            msgDadosNaoEncontrados.visible = !vSeriesAbstractModel.rowCount()
         }
 
         onInputFocusChanged:function(focus){
@@ -102,6 +103,18 @@ Item {
        width: background.width - 40
        height: background.height / 1.2
 
+       Text{
+           id:msgDadosNaoEncontrados
+           text: "Nada encontrado :("
+           color: "#c0c0c0"
+           font.bold: true
+           anchors.centerIn: gridBackground
+           horizontalAlignment: Text.AlignHCenter
+           height: 60
+           width: 60
+           font.pixelSize: 40
+           visible: false
+       }
 
         GridView{
             id:tempList
@@ -113,7 +126,6 @@ Item {
 
             onMovingChanged: {
                 topBar.search.input.focus = false
-
             }
 
             cellWidth: tempList.width / 2
