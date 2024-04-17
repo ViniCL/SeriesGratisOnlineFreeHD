@@ -6,6 +6,7 @@ import SeriesAbstractModel 1.0
 import QtQuick.VirtualKeyboard 2.15
 import QtQuick.VirtualKeyboard.Styles 2.15
 import QtQuick.VirtualKeyboard.Settings 2.15
+import Qt5Compat.GraphicalEffects
 
 Item {
     id:root
@@ -37,6 +38,39 @@ Item {
 
     }
 
+    Image {
+        id:logoImage
+        source: "../styles/images/logoSeriesGratisOnlineFreeHD2.png"
+        anchors.top: background.top
+        anchors.topMargin: 22
+        height: 55
+        width: 440
+        anchors.horizontalCenter: background.horizontalCenter
+        visible: false
+
+    }
+
+    ColorOverlay{
+        id:colorOverlay
+        anchors.fill: logoImage
+        enabled: true
+        source: logoImage
+        color: "#c0c0c0"
+        smooth: true
+    }
+
+    Text{
+        id:tvMazeCredits
+        text: "Powered by TVmaze API & ViniCL"
+        color: "#c0c0c0"
+        anchors.horizontalCenter: background.horizontalCenter
+        horizontalAlignment: Text.AlignHCenter
+        anchors.topMargin: 0
+        height: 10
+        width: 10
+    }
+
+
     TopBar{
         id: topBar
 
@@ -52,9 +86,9 @@ Item {
         }
 
         anchors.top: background.top
-        anchors.topMargin: 40
+        anchors.topMargin: 70
         width: background.width
-        height: background.height / 8
+        height: background.height / 9
     }
 
 
