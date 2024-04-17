@@ -32,7 +32,7 @@ BackgroundCustom {
         elide: Text.ElideRight
         wrapMode: Text.WordWrap
         horizontalAlignment: Text.AlignHCenter
-        width: mainImage.width + 20
+        width: mainImage.width + 120
 
     }
 
@@ -43,7 +43,7 @@ BackgroundCustom {
         anchors.topMargin: 20
         anchors.horizontalCenter: root.horizontalCenter
 
-        source: vMainImageUrl
+        source: vMainImageUrl.length > 1 ? vMainImageURL : "../styles/images/defaultCardImage2.png"
         width: root.width / 2
         height: root.height / 3.5
         fillMode: Image.PreserveAspectFit
@@ -91,7 +91,7 @@ BackgroundCustom {
 
             Text {
                 id:generosList
-                text: vGenres.join(", ")
+                text: vGenres.length > 1 ? vGenres.join(", ") : "All"
                 maximumLineCount: 10
                 font.pixelSize: 18
                 elide: Text.ElideRight

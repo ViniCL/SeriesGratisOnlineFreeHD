@@ -7,7 +7,6 @@ import atoms 1.0
 import "../styles/icones"
 import "../styles/images"
 
-
 BackgroundCustom {
     id: root
     width: 300
@@ -33,15 +32,27 @@ BackgroundCustom {
         anchors.horizontalCenter: root.horizontalCenter
         anchors.topMargin: 16
 
-        source: "../styles/images/defaultCardImage.png"
+        source: "../styles/images/defaultCardImage2.png"
         width: root.width / 1.3
         height: root.height / 1.3
         fillMode: Image.PreserveAspectFit
         asynchronous: true
 
         visible: status === Image.Ready
-
     }
+
+    Rectangle{
+        id:thumbnailMask
+
+        height: thumbnail.height + 28
+        width: thumbnail.width + 40
+        anchors.centerIn: thumbnail
+        border.color: root.color
+        border.width: 20
+        radius: 60
+        color: "transparent"
+    }
+
 
     BusyIndicator {
         id: busyIndicator
