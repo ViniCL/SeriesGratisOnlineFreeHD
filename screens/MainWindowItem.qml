@@ -191,7 +191,10 @@ Item {
         to: root.height
         duration: 200
 
-        onStopped: inputPanel.visible = false
+        onStopped: {
+            inputPanel.visible = false
+            topBar.search.input.focus = false
+        }
     }
 
 }
