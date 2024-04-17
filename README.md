@@ -37,7 +37,10 @@ https://www.qt.io/download-qt-installer-oss
 
 
 3 - Instale o Qt 6.7 junto com os componentes extras (igual na imagem abaixo)
+
 ![Test Image 1](ProjectInfo/ComponentesInstalacaoAmbiente.png)
 
 4 - Avance os passos até a instalação ser concluida.
+
+
 
