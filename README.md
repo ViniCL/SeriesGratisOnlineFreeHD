@@ -46,7 +46,7 @@ https://www.qt.io/download-qt-installer-oss
 
 ![image](https://github.com/ViniCL/SeriesGratisOnlineFreeHD/assets/52608377/cf8c32de-07f7-4357-aaf4-81249b26a812)
 
-2 - Faça abra o Instalador baixado e avance até o seguinte passo, clicando em "Instalação Personalizada"
+2 - Execute o Instalador baixado e avance até o seguinte passo, clicando em "Instalação Personalizada"
 ![image](https://github.com/ViniCL/SeriesGratisOnlineFreeHD/assets/52608377/a6d2d524-2c42-4bda-b548-3fb46f8c4cb7)
 
 
