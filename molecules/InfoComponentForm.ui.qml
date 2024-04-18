@@ -22,17 +22,17 @@ BackgroundCustom {
         id: title
 
         anchors.top: root.top
-        anchors.topMargin: 20
+        anchors.topMargin: root.height / 30
         anchors.horizontalCenter: root.horizontalCenter
 
         text: vTitle
         font.bold: true
         maximumLineCount: 2
-        font.pixelSize: 30
+        font.pixelSize: mainImage.width / 8
         elide: Text.ElideRight
         wrapMode: Text.WordWrap
         horizontalAlignment: Text.AlignHCenter
-        width: mainImage.width + 120
+        width: mainImage.width * 1.5
 
     }
 
@@ -40,12 +40,12 @@ BackgroundCustom {
         id: mainImage
 
         anchors.top: title.bottom
-        anchors.topMargin: 20
+        anchors.topMargin: root.height / 60
         anchors.horizontalCenter: root.horizontalCenter
 
         source: vMainImageUrl.length > 1 ? vMainImageURL : "../styles/images/defaultCardImage2.png"
-        width: root.width / 2
-        height: root.height / 3.5
+        width: root.width / 2.2
+        height: root.height / 4
         fillMode: Image.PreserveAspectFit
 
     }
@@ -56,16 +56,16 @@ BackgroundCustom {
         width: root.width * 0.8
 
         anchors.top: mainImage.bottom
-        anchors.topMargin: 20
+        anchors.topMargin: root.height / 50
         anchors.horizontalCenter: root.horizontalCenter
 
-        spacing: 14
+        spacing: 4
 
         Text {
             id:descricao
             text: vDescription
-            maximumLineCount: 18
-            font.pixelSize: 18
+            maximumLineCount: 14
+            font.pixelSize: mainImage.width / 11
             elide: Text.ElideRight
             wrapMode: Text.WordWrap
             horizontalAlignment: Text.AlignLeft
@@ -82,7 +82,7 @@ BackgroundCustom {
                 text: "Genres: "
                 font.bold: true
                 maximumLineCount: 10
-                font.pixelSize: 18
+                font.pixelSize: mainImage.width / 11
                 elide: Text.ElideRight
                 wrapMode: Text.WordWrap
                 horizontalAlignment: Text.AlignLeft
@@ -93,13 +93,12 @@ BackgroundCustom {
                 id:generosList
                 text: vGenres.length > 1 ? vGenres.join(", ") : "All"
                 maximumLineCount: 10
-                font.pixelSize: 18
+                font.pixelSize: mainImage.width / 11
                 elide: Text.ElideRight
                 wrapMode: Text.WordWrap
                 horizontalAlignment: Text.AlignLeft
                 Layout.maximumWidth: column.width
             }
-
 
         }
     }
@@ -107,17 +106,17 @@ BackgroundCustom {
     Row {
         id: starRow
 
-        spacing: 7
+        spacing: 4
 
         anchors.bottom: root.bottom
-        anchors.bottomMargin: 40
+        anchors.bottomMargin: root.width / 16
         anchors.horizontalCenter: root.horizontalCenter
 
         Image {
             id: star
             source:  "../styles/icones/star.png"
-            width: 70
-            height: 70
+            width: mainImage.width / 5
+            height: mainImage.width / 5
             fillMode: Image.PreserveAspectFit
         }
 
@@ -126,7 +125,7 @@ BackgroundCustom {
             text: vRating.toFixed(1)
             font.bold: true
             maximumLineCount: 1
-            font.pixelSize: 50
+            font.pixelSize: mainImage.width / 6
             elide: Text.ElideRight
             wrapMode: Text.WordWrap
             horizontalAlignment: Text.AlignLeft

@@ -9,8 +9,8 @@ import SeriesAbstractModel 1.0
 
 ApplicationWindow {
     id: root
-    width: 640
-    height: 1136
+    width: 384;
+    height: 680;
     visible: true
     title: qsTr("POS SCREEN")
 
