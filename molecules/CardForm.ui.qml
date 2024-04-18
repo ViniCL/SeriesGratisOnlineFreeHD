@@ -30,7 +30,7 @@ BackgroundCustom {
 
         anchors.top: root.top
         anchors.horizontalCenter: root.horizontalCenter
-        anchors.topMargin: 16
+        anchors.topMargin: root.height / 28
 
         source: "../styles/images/defaultCardImage2.png"
         width: root.width / 1.3
@@ -44,11 +44,11 @@ BackgroundCustom {
     Rectangle{
         id:thumbnailMask
 
-        height: thumbnail.height + 28
-        width: thumbnail.width + 40
+        height: thumbnail.height * 1.07
+        width: thumbnail.width * 1.24
         anchors.centerIn: thumbnail
         border.color: root.color
-        border.width: 20
+        border.width: thumbnail.width / 9
         radius: 60
         color: "transparent"
     }
@@ -66,14 +66,14 @@ BackgroundCustom {
     Text {
         id: title
 
-        anchors.bottom: starRow.top
         anchors.horizontalCenter: root.horizontalCenter
-        anchors.bottomMargin: 6
+        anchors.bottom: starRow.top
+        anchors.bottomMargin: root.height / 80
 
         text: vTitle
         font.bold: true
         maximumLineCount: 1
-        font.pixelSize: 20
+        font.pixelSize: thumbnail.width / 10
         elide: Text.ElideRight
         wrapMode: Text.WordWrap
         horizontalAlignment: Text.AlignLeft
@@ -86,13 +86,13 @@ BackgroundCustom {
 
         anchors.bottom: root.bottom
         anchors.left: thumbnail.left
-        anchors.bottomMargin: 18
+        anchors.bottomMargin: root.height / 30
 
         Image {
             id: starIcon
             source: "../styles/icones/star.png"
-            width: 25
-            height: 25
+            width: thumbnail.width / 8
+            height: thumbnail.width / 8
         }
 
         Text {
@@ -100,7 +100,7 @@ BackgroundCustom {
             text: vNota
             font.bold: true
             maximumLineCount: 1
-            font.pixelSize: 18
+            font.pixelSize: thumbnail.width / 9
             elide: Text.ElideRight
             wrapMode: Text.WordWrap
             horizontalAlignment: Text.AlignLeft

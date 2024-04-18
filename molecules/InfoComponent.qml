@@ -10,5 +10,4 @@ InfoComponentForm {
     property real vRating: 0.0
     property var vGenres: ["All"]
 
-
 }

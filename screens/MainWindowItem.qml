@@ -38,13 +38,25 @@ Item {
 
     }
 
+    Text{
+        id:tvMazeCredits
+        text: "Powered by TVmaze API & ViniCL"
+        color: "#c0c0c0"
+        font.pixelSize: root.width / 38
+        anchors.horizontalCenter: background.horizontalCenter
+        horizontalAlignment: Text.AlignHCenter
+        anchors.topMargin: 0
+        height: root.height / 64
+        width: root.width / 3
+    }
+
     Image {
         id:logoImage
         source: "../styles/images/logoSeriesGratisOnlineFreeHD2.png"
         anchors.top: background.top
-        anchors.topMargin: 22
-        height: 55
-        width: 440
+        anchors.topMargin: root.height / 42
+        height: root.height / 16
+        width: root.width / 1.2
         anchors.horizontalCenter: background.horizontalCenter
         visible: false
 
@@ -59,20 +71,14 @@ Item {
         smooth: true
     }
 
-    Text{
-        id:tvMazeCredits
-        text: "Powered by TVmaze API & ViniCL"
-        color: "#c0c0c0"
-        anchors.horizontalCenter: background.horizontalCenter
-        horizontalAlignment: Text.AlignHCenter
-        anchors.topMargin: 0
-        height: 10
-        width: 10
-    }
-
 
     TopBar{
         id: topBar
+
+        anchors.top: root.top
+        anchors.topMargin: root.height / 14
+        height: background.height / 8.2
+        width: background.width
 
         vColor: "transparent"
 
@@ -86,10 +92,6 @@ Item {
 
         }
 
-        anchors.top: background.top
-        anchors.topMargin: 70
-        width: background.width
-        height: background.height / 9
     }
 
 
@@ -100,7 +102,7 @@ Item {
        anchors.horizontalCenter: background.horizontalCenter
        anchors.bottom: background.bottom
 
-       width: background.width - 40
+       width: background.width / 1.1
        height: background.height / 1.2
 
        Text{
@@ -110,9 +112,9 @@ Item {
            font.bold: true
            anchors.centerIn: gridBackground
            horizontalAlignment: Text.AlignHCenter
-           height: 60
-           width: 60
-           font.pixelSize: 40
+           height: root.height / 10
+           width: root.width / 3
+           font.pixelSize: root.width / 14
            visible: false
        }
 

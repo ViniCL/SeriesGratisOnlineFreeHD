@@ -44,20 +44,22 @@ Item {
         id:infoComponent
 
         anchors.fill: background
-        anchors.margins: 30
-        anchors.bottomMargin: 90
+        anchors.margins: root.height / 38
+        anchors.bottomMargin: root.height / 12
 
     }
 
     ButtonCustom{
         id: btn
 
-        anchors.top: infoComponent.bottom
-        anchors.margins: 10
-        anchors.horizontalCenter: infoComponent.horizontalCenter
+        width: root.height / 15
+        height: root.height / 15
 
-        width: 70
-        height: 70
+        anchors.bottom: root.bottom
+        anchors.bottomMargin: root.height / 120
+        anchors.horizontalCenter: root.horizontalCenter
+
+
 
         onClicked: returnToMain()
     }
