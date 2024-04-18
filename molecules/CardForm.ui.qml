@@ -66,7 +66,8 @@ BackgroundCustom {
     Text {
         id: title
 
-        anchors.horizontalCenter: root.horizontalCenter
+        anchors.left: root.left
+        anchors.leftMargin: root.height / 20
         anchors.bottom: starRow.top
         anchors.bottomMargin: root.height / 80
 
@@ -77,7 +78,7 @@ BackgroundCustom {
         elide: Text.ElideRight
         wrapMode: Text.WordWrap
         horizontalAlignment: Text.AlignLeft
-        width: thumbnail.width
+        width: thumbnail.width * 1.1
     }
 
     Row {
@@ -85,14 +86,15 @@ BackgroundCustom {
         spacing: 4
 
         anchors.bottom: root.bottom
-        anchors.left: thumbnail.left
         anchors.bottomMargin: root.height / 30
+        anchors.left: root.left
+        anchors.leftMargin: root.height / 20
 
         Image {
             id: starIcon
             source: "../styles/icones/star.png"
-            width: thumbnail.width / 8
-            height: thumbnail.width / 8
+            width: thumbnail.width / 7
+            height: thumbnail.width / 7
         }
 
         Text {
