@@ -32,7 +32,7 @@ BackgroundCustom {
         elide: Text.ElideRight
         wrapMode: Text.WordWrap
         horizontalAlignment: Text.AlignHCenter
-        width: mainImage.width * 1.5
+        width: mainImage.width * 1.7
 
     }
 

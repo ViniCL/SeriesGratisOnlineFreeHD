@@ -44,12 +44,12 @@ BackgroundCustom {
     Rectangle{
         id:thumbnailMask
 
-        height: thumbnail.height * 1.07
-        width: thumbnail.width * 1.24
+        height: thumbnail.height * 1.05
+        width: thumbnail.width * 1.18
         anchors.centerIn: thumbnail
         border.color: root.color
-        border.width: thumbnail.width / 9
-        radius: 60
+        border.width: thumbnail.width / 9.8
+        radius: 30
         color: "transparent"
     }
 

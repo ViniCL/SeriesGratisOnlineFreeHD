@@ -76,7 +76,7 @@ Item {
         id: topBar
 
         anchors.top: root.top
-        anchors.topMargin: root.height / 14
+        anchors.topMargin: root.height / 15.5
         height: background.height / 8.2
         width: background.width
 
