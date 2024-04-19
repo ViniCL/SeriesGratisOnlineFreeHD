@@ -123,7 +123,7 @@ BackgroundCustom {
         }
 
         Text {
-            id: nota
+            id: rating
             text: vRating.toFixed(1)
             font.bold: true
             maximumLineCount: 1

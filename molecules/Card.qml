@@ -7,7 +7,7 @@ CardForm{
 
     property string vTitle
     property string vImageUrl
-    property real vNota
+    property real vRating
 
     mouseArea.onReleased: root.clicked()
 

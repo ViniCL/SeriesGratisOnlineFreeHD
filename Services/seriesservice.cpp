@@ -13,6 +13,8 @@ QList<SeriesDTO*> SeriesService::searchAllSeries(const QString& searchString) {
         seriesList.append(seriesDTO);
     }
 
+    qDeleteAll(seriesStubList);
+
     return seriesList;
 }
 
@@ -37,6 +39,8 @@ SerieInfoDTO* SeriesService::searchOneSerieById(int id) {
         serieInfo = new SerieInfoDTO();
         serieInfo->fillFromSerieStub(*serieStub);
     }
+
+    delete serieStub;
 
     return serieInfo;
 }

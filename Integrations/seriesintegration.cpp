@@ -51,7 +51,7 @@ QJsonDocument SeriesIntegration::getConnection(QUrl url)
     loop.exec();
 
     if (reply->error() != QNetworkReply::NoError) {
-        qDebug() << "Erro : " << reply->errorString();
+        qDebug() << "SeriesIntegration::getConnection Erro " << reply->errorString();
         return jsonDocument;
     }
 

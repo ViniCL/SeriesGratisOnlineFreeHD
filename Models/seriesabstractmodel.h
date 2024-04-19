@@ -15,9 +15,9 @@ public:
 
     enum Role {
         idSerie,
-        dsNome,
+        dsName,
         imagem,
-        nota
+        rating
     };
 
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
