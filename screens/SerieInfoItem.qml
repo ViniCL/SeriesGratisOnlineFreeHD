@@ -59,12 +59,61 @@ Item {
     ButtonCustom{
         id: btn
 
+<<<<<<< Updated upstream
         anchors.top: infoComponent.bottom
         anchors.margins: 10
         anchors.horizontalCenter: infoComponent.horizontalCenter
 
         width: 70
         height: 70
+=======
+<<<<<<< Updated upstream
+        width: root.height / 15
+        height: root.height / 15
+
+        anchors.bottom: root.bottom
+        anchors.bottomMargin: root.height / 120
+        anchors.horizontalCenter: root.horizontalCenter
+
+
+=======
+<<<<<<< Updated upstream
+        anchors.top: infoComponent.bottom
+        anchors.margins: 10
+        anchors.horizontalCenter: infoComponent.horizontalCenter
+
+        width: 70
+        height: 70
+=======
+<<<<<<< Updated upstream
+        width: root.height / 15
+        height: root.height / 15
+
+        anchors.bottom: root.bottom
+        anchors.bottomMargin: root.height / 120
+        anchors.horizontalCenter: root.horizontalCenter
+
+
+=======
+<<<<<<< Updated upstream
+        anchors.top: infoComponent.bottom
+        anchors.margins: 10
+        anchors.horizontalCenter: infoComponent.horizontalCenter
+
+        width: 70
+        height: 70
+=======
+        width: root.height / 15
+        height: root.height / 15
+
+        anchors.bottom: root.bottom
+        anchors.bottomMargin: root.height / 120
+        anchors.horizontalCenter: root.horizontalCenter
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 
         onClicked: returnToMain()
     }
