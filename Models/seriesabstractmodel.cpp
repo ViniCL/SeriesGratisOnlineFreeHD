@@ -1,6 +1,15 @@
 #include "seriesabstractmodel.h"
 
-SeriesAbstractModel::SeriesAbstractModel(QObject *parent) : QAbstractListModel(parent) {}
+namespace {
+    constexpr int FIRST_PAGE = 0;
+    constexpr int MAX_PAGES = 2;
+}
+
+SeriesAbstractModel::SeriesAbstractModel(QObject *parent) :
+    QAbstractListModel( parent ),
+    _currentPage( FIRST_PAGE ),
+    _series({}),
+    _newSeriesSearched({}){}
 
 SeriesAbstractModel::~SeriesAbstractModel() {
     qDeleteAll(_series);
@@ -40,16 +49,78 @@ QHash<int, QByteArray> SeriesAbstractModel::roleNames() const {
     return roles;
 }
 
+bool SeriesAbstractModel::canFetchMore(const QModelIndex &parent) const
+{
+    qInfo() << "SeriesAbstractModel::canFetchMore [SERIES_SIZE]" << _series.size();
+
+    Q_UNUSED( parent )
+
+    if ( _series.isEmpty() || _currentPage > MAX_PAGES ){
+        return false;
+    }
+
+    qInfo() << "SeriesAbstractModel::canFetchMore [RETURN]" << true;
+
+    return true;
+}
+
+void SeriesAbstractModel::fetchMore(const QModelIndex &parent)
+{
+
+    qInfo() << "SeriesAbstractModel::fetchMore [CURRENT_PAGE_INITIAL]" << _currentPage;
+
+    Q_UNUSED( parent )
+
+    emit retrieveNewSeries(_currentPage);
+
+    qInfo() << "SeriesAbstractModel::fetchMore [NEW_SERIES_SEARCHED_SIZE]" << _newSeriesSearched.size();
+
+    if ( !_newSeriesSearched.isEmpty() ) {
+        beginInsertRows( QModelIndex(), _series.size(), _series.size() + _newSeriesSearched.size() - 1 );
+        for ( const auto& series : _newSeriesSearched ) {
+            _series.append( series );
+        }
+        endInsertRows();
+        _newSeriesSearched.clear();
+
+    }
+    _currentPage++;
+
+    qInfo() << "SeriesAbstractModel::fetchMore [CURRENT_PAGE_FINAL]" << _currentPage << "[SERIES_SIZE]" << _series.size();
+
+}
+
+QList<SeriesDTO *> SeriesAbstractModel::newSeriesSearched() const
+{
+    return _newSeriesSearched;
+}
+
+void SeriesAbstractModel::setNewSeriesSearched(const QList<SeriesDTO *> &newNewSeriesSearched)
+{
+    if (_newSeriesSearched == newNewSeriesSearched)
+        return;
+    _newSeriesSearched = newNewSeriesSearched;
+    emit newSeriesSearchedChanged();
+}
+
 QList<SeriesDTO*> SeriesAbstractModel::series() const {
     return _series;
 }
 
 void SeriesAbstractModel::setSeries(const QList<SeriesDTO*> &series) {
-    if (_series == series)
-        return;
     beginResetModel();
-    qDeleteAll(_series);
+
+    _series.reserve( series.size() );
     _series = series;
+
     endResetModel();
-    emit seriesChanged();
 }
+
+void SeriesAbstractModel::resetCurrentPage() {
+    _currentPage = FIRST_PAGE;
+}
+
+int SeriesAbstractModel::getCurrentPage() {
+    return _currentPage;
+}
+
