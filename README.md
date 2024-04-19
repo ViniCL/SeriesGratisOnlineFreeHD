@@ -3,6 +3,22 @@
 
 Ele consome os dados da TVmaze API (https://www.tvmaze.com/api). Créditos totais.
 
+Feito em versão Desktop, mas simula as dimensões de aparelhos portáteis. (Ex: Celular e POS)
+
+## Detalhes e Imagens do App
+
+* Possui pesquisa automatica ao interagir com o campo de busca, sem a necessidade de clicar em botões. O sistema entende quando o usuario parou de digitar, para não sobrecarregar o limite de requsições da API.
+* O carregamento dos cards na grid é feito sob demanda, conforme a scrollagem é feita para baixo. Foi feito como exemplo, pensando em escalabilidade dos sistema.
+* Possui teclado virtual que aparece e desaparece automaticamente, ao interagir com o campo de busca ou com o scroll da listagem.
+* Pode ser redimensionado visando encaixar em aparelhos de tamanhos proximos ao original do projeto, foi feito isso pensando em diversos tamanhos de celulares ou POSs. (Por padrão a tela vem com tamanho fixo)
+* Design arrojado, necessitando poucos cliques nas interações.
+
+![image](https://github.com/ViniCL/SeriesGratisOnlineFreeHD/assets/52608377/3a3ee043-9f36-4bdf-8b58-37e36328ee70)
+![image](https://github.com/ViniCL/SeriesGratisOnlineFreeHD/assets/52608377/1e0039d2-24fe-4572-86de-b795b6d2ae2f)
+![image](https://github.com/ViniCL/SeriesGratisOnlineFreeHD/assets/52608377/3ab61f18-181d-410c-8e20-b2e9adee2986)
+![image](https://github.com/ViniCL/SeriesGratisOnlineFreeHD/assets/52608377/c73a1b0d-0dec-43a5-a59b-cdc1c07d0c2d)
+
+
 ## Arquitetura:
 
 #### Backend:
@@ -90,19 +106,6 @@ Adendo: O projeto não usa todos esses modulos. Porém, é o ambiente que foi us
 
 #### 6 - Correr para o abraço
 
-
-## Detalhes e Imagens do Inenarrável
-
-* Possui pesquisa automatica ao interagir com o campo de busca, sem a necessidade de clicar em botões. O sistema entende quando o usuario parou de digitar, para não sobrecarregar o limite de requsições da API.
-* O carregamento dos cards na grid é feito sob demanda, conforme a scrollagem é feita para baixo. Foi feito como exemplo, pensando em escalabilidade dos sistema.
-* Possui teclado virtual que aparece e desaparece automaticamente, ao interagir com o campo de busca ou com o scroll da listagem.
-* Pode ser redimensionado visando encaixar em aparelhos de tamanhos proximos ao original do projeto, foi feito isso pensando em diversos tamanhos de celulares ou POSs. (Por padrão a tela vem com tamanho fixo)
-* Design arrojado, necessitando poucos cliques nas interações.
-
-![image](https://github.com/ViniCL/SeriesGratisOnlineFreeHD/assets/52608377/3a3ee043-9f36-4bdf-8b58-37e36328ee70)
-![image](https://github.com/ViniCL/SeriesGratisOnlineFreeHD/assets/52608377/1e0039d2-24fe-4572-86de-b795b6d2ae2f)
-![image](https://github.com/ViniCL/SeriesGratisOnlineFreeHD/assets/52608377/3ab61f18-181d-410c-8e20-b2e9adee2986)
-![image](https://github.com/ViniCL/SeriesGratisOnlineFreeHD/assets/52608377/c73a1b0d-0dec-43a5-a59b-cdc1c07d0c2d)
 
 
 
