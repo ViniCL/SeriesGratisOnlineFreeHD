@@ -45,7 +45,7 @@ QHash<int, QByteArray> SeriesAbstractModel::roleNames() const {
     roles[idSerie] = "idSerie";
     roles[dsName] = "nome";
     roles[imagem] = "imagem";
-    roles[rating] = "nota";
+    roles[rating] = "rating";
     return roles;
 }
 
