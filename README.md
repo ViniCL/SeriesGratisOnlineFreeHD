@@ -11,11 +11,11 @@ Foi usada uma arquitetura de Camadas, cada uma com uma função no sistema.
 
 - Integration: Contem classes que se ligam com APIs/endpoints e transformam os dados obtidos em um formato aceito pelo sistema.
 - Service: Recebe os dados do Integration e faz a logica de negócio.
-- Delegate: Camada de transporte, também pode ser usada para validações. Como por exemplo Trasactions/Commits/Rollbacks (caso houvesse banco de dados no sistema).
+- Delegate: Camada de transporte. Também pode ser usada para validações, como por exemplo Transactions/Commits/Rollbacks (caso houvesse banco de dados no sistema).
 - Controller: Faz a exposição dos dados para o Front-End
 
 #### Frontend:
-- Control: Contem classes que conectam com o Backend e com a UI (QML), permitindo troca de dados.
+- Control: Contém classes que conectam com o Backend e com a UI (QML), permitindo troca de dados.
 
 ![image](https://github.com/ViniCL/SeriesGratisOnlineFreeHD/assets/52608377/eda5ae7b-28b7-41ee-96c6-94afee83d8c1)
 
@@ -34,6 +34,7 @@ Kit: Desktop Qt 6.7.0 MinGW 64-bit
 
 Build System: QMake
 
+Compilers e demais dados do KIT:
 ![image](https://github.com/ViniCL/SeriesGratisOnlineFreeHD/assets/52608377/cabc35c4-31cd-42b3-ba1c-149064c37fc1)
 
 
