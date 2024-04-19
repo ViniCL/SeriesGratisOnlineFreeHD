@@ -21,6 +21,9 @@ ApplicationWindow {
 
     property int _idSerieInfoInicial: 1
 
+    property int _idxMainWindow: 0
+    property int _idxInfoScreen: 1
+
     MainWindowControl{
         id: mainControl
 
@@ -30,7 +33,7 @@ ApplicationWindow {
         id: view
 
         interactive: false
-        currentIndex: 0
+        currentIndex: _idxMainWindow
         anchors.fill: parent
 
         MainWindowItem{
@@ -41,7 +44,7 @@ ApplicationWindow {
                 serieInfoScreen.vTitle = nome
                 serieInfoScreen.vRating = rating
                 serieInfoScreen.vIdSerie = id
-                view.currentIndex = 1
+                view.currentIndex = _idxInfoScreen
             }
         }
 
@@ -49,7 +52,7 @@ ApplicationWindow {
             id: serieInfoScreen
 
             vIdSerie: _idSerieInfoInicial
-            onReturnToMain: view.currentIndex = 0
+            onReturnToMain: view.currentIndex = _idxMainWindow
 
         }
 
