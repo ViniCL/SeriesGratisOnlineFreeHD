@@ -164,7 +164,7 @@ Item {
 
                     vImageUrl: imagem
                     vTitle: nome
-                    vNota: nota
+                    vRating: nota
 
 
                     onClicked: cardClicked(idSerie, imagem, nome, nota)

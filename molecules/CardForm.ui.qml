@@ -99,7 +99,7 @@ BackgroundCustom {
 
         Text {
             id: ratingText
-            text: vNota
+            text: vRating
             font.bold: true
             maximumLineCount: 1
             font.pixelSize: thumbnail.width / 9

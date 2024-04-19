@@ -29,11 +29,11 @@ QVariant SeriesAbstractModel::data(const QModelIndex &index, int role) const {
     switch (role) {
     case idSerie:
         return series->id();
-    case dsNome:
+    case dsName:
         return series->dsName();
     case imagem:
         return series->image();
-    case nota:
+    case rating:
         return series->rating();
     default:
         return QVariant();
@@ -43,9 +43,9 @@ QVariant SeriesAbstractModel::data(const QModelIndex &index, int role) const {
 QHash<int, QByteArray> SeriesAbstractModel::roleNames() const {
     QHash<int, QByteArray> roles;
     roles[idSerie] = "idSerie";
-    roles[dsNome] = "nome";
+    roles[dsName] = "nome";
     roles[imagem] = "imagem";
-    roles[nota] = "nota";
+    roles[rating] = "nota";
     return roles;
 }
 
