@@ -12,11 +12,16 @@ public:
     MainWindowControl();
     ~MainWindowControl();
 
-    Q_INVOKABLE QVariant doSearchAllSeries( const QString& dsPesquisa );
+    Q_INVOKABLE  QList<SeriesDTO*> getListaSeriesCortada(int page);
+    Q_INVOKABLE void doSearchAllSeries( const QString& dsPesquisa );
     Q_INVOKABLE SerieInfoDTO searchOneSerieById(int id);
+    Q_INVOKABLE void resetLastIndexRetrieved();
 
 private:
+    QList<SeriesDTO*> _allSeriesList;
     SeriesController _seriesController;
+    int _lastIndexRetrieved;
+
 };
 
 #endif // MAINWINDOWCONTROL_H

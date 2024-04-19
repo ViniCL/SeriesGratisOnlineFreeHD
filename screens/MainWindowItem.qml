@@ -18,12 +18,24 @@ Item {
     property SeriesAbstractModel vSeriesAbstractModel : SeriesAbstractModel{
         id: seri
 
+        onRetrieveNewSeries: function(currentPage){
+                vSeriesAbstractModel.newSeriesSearched = mainControl.getListaSeriesCortada(currentPage)
+        }
+
     }
 
     on_ShowKeyboardChanged: _showKeyboard ? animacaoEntrada.start() : animacaoSaida.start()
 
+    function doSearch(pesquisa){
+        vSeriesAbstractModel.resetCurrentPage()
+        mainControl.resetLastIndexRetrieved()
+        mainControl.doSearchAllSeries(pesquisa)
+        vSeriesAbstractModel.series = mainControl.getListaSeriesCortada(vSeriesAbstractModel.getCurrentPage());
+
+    }
+
     Component.onCompleted: {
-        vSeriesAbstractModel.series = mainControl.doSearchAllSeries("");
+        doSearch("")
     }
 
     Rectangle{
@@ -83,7 +95,7 @@ Item {
         vColor: "transparent"
 
         onPesquisaChanged: function(pesquisa){
-            vSeriesAbstractModel.series = mainControl.doSearchAllSeries(pesquisa);
+            doSearch(pesquisa)
             msgDadosNaoEncontrados.visible = !vSeriesAbstractModel.rowCount()
         }
 
@@ -133,7 +145,7 @@ Item {
             cellWidth: tempList.width / 2
             cellHeight: tempList.height / 2.2
 
-            //cacheBuffer:
+            cacheBuffer:0
 
             delegate: Rectangle{
                 id: delegateBackground

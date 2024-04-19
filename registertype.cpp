@@ -2,7 +2,7 @@
 
 #include <QQmlApplicationEngine>
 
-#include "Controls\mainwindowcontrol.h"
+#include "Controls/mainwindowcontrol.h"
 #include "Models/seriesabstractmodel.h"
 #include "Models/serieinfodto.h"
 
