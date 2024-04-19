@@ -57,15 +57,18 @@ SerieInfoDTO MainWindowControl::searchOneSerieById(int id)
 {
     qInfo() << "MainWindowControl::searchOneSerieById [ID]" << id;
 
-    SerieInfoDTO* serieInfo;
+    SerieInfoDTO* serieInfoPtr = _seriesController.searchOneSerieById(id);
 
-    serieInfo = _seriesController.searchOneSerieById(id);
+    SerieInfoDTO serieInfoObj = *serieInfoPtr;
 
-    return *serieInfo;
+    delete serieInfoPtr;
+
+    return serieInfoObj;
 }
 
 void MainWindowControl::resetLastIndexRetrieved()
 {
     _lastIndexRetrieved = 0;
+    qDeleteAll(_allSeriesList);
 }
 
