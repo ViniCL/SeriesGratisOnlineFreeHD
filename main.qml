@@ -39,9 +39,9 @@ ApplicationWindow {
         MainWindowItem{
             id:mainWindowScreen
 
-            onCardClicked: function(id, imagem, nome, rating){
+            onCardClicked: function(id, imagem, name, rating){
                 serieInfoScreen.vMainImageURL = imagem
-                serieInfoScreen.vTitle = nome
+                serieInfoScreen.vTitle = name
                 serieInfoScreen.vRating = rating
                 serieInfoScreen.vIdSerie = id
                 view.currentIndex = _idxInfoScreen

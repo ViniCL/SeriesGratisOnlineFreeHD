@@ -11,7 +11,7 @@ import Qt5Compat.GraphicalEffects
 Item {
     id:root
 
-    signal cardClicked(int idSerie, string imagem, string nome, real rating)
+    signal cardClicked(int idSerie, string imagem, string name, real rating)
 
     property bool _showKeyboard: false
     property real _inputPanelStartPosition: root.height - inputPanel.height
@@ -163,11 +163,11 @@ Item {
                     anchors.centerIn: delegateBackground
 
                     vImageUrl: imagem
-                    vTitle: nome
+                    vTitle: name
                     vRating: rating
 
 
-                    onClicked: cardClicked(idSerie, imagem, nome, rating)
+                    onClicked: cardClicked(idSerie, imagem, name, rating)
                 }
             }
 

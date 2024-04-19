@@ -43,7 +43,7 @@ QVariant SeriesAbstractModel::data(const QModelIndex &index, int role) const {
 QHash<int, QByteArray> SeriesAbstractModel::roleNames() const {
     QHash<int, QByteArray> roles;
     roles[idSerie] = "idSerie";
-    roles[dsName] = "nome";
+    roles[dsName] = "name";
     roles[imagem] = "imagem";
     roles[rating] = "rating";
     return roles;
