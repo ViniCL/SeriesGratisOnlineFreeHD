@@ -110,6 +110,8 @@ QList<SeriesDTO*> SeriesAbstractModel::series() const {
 void SeriesAbstractModel::setSeries(const QList<SeriesDTO*> &series) {
     beginResetModel();
 
+    _series.clear();
+    _series.squeeze();
     _series.reserve( series.size() );
     _series = series;
 
