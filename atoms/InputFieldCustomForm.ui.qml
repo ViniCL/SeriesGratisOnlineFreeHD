@@ -60,7 +60,7 @@ Rectangle {
                 id:clearImage
                 source: "../styles/icones/apagar.png"
                 anchors.right: clearButton.right
-                anchors.rightMargin: 25
+                anchors.rightMargin: clearButton.width / 6
                 anchors.verticalCenter: clearButton.verticalCenter
                 width: clearButton.width / 1.4
                 height: clearButton.height / 1.4
